@@ -1,0 +1,10 @@
+
+openvpn_auth_ldap:
+    URL: ldaps://ldap.domain.com
+    BindDN: cn=admins@domai .com,ou=users,dc=domain,dc=com
+    Password: someStr0ngPassw0rd
+    Timeout: 15
+    BaseDN: "ou=users,dc=domain,dc=com"
+    SearchFilter: "(&(memberOf=cn=openvpn-access*)(objectClass=inetOrgPerson)(cn=%u))"
+    RequireGroup: "false"
+

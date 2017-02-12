@@ -1,0 +1,13 @@
+<LDAP>
+    URL           {{ openvpn_auth_ldap.URL }}
+    BindDN        {{ openvpn_auth_ldap.BindDN }}
+    Password      {{ openvpn_auth_ldap.Password }}
+    Timeout       {{ openvpn_auth_ldap.Timeout }}
+</LDAP>
+
+<Authorization>
+    BaseDN          "{{ openvpn_auth_ldap.BaseDN }}"
+    SearchFilter    "{{ openvpn_auth_ldap.SearchFilter }}"
+    RequireGroup    {{ openvpn_auth_ldap.RequireGroup }}
+</Authorization>
+
