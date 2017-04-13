@@ -22,6 +22,8 @@ auth-ldap-script:
     - template: jinja
     - context:
       openvpn_auth_ldap: {{ openvpn_auth_ldap|json }}
+    - require:
+       - file: /etc/openvpn/auth
     - watch_in:
 {% if salt['grains.has_value']('systemd') %}
 {% for type, names in salt['pillar.get']('openvpn', {}).iteritems() %}
